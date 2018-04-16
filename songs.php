@@ -68,7 +68,7 @@
 						foreach ($conn->query("SELECT Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
 							echo "<tr><td style='padding: 10px'>";
 							echo $row['Name'];
-							echo "</td>	<td> <td>";
+							echo "</td>	<td style='padding: 10px'>";
 							echo $row['username'];
 							echo "</td> </tr>";
 						}

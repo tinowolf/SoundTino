@@ -81,24 +81,7 @@
 					</div>
 				</div>
 
-				<?php
-				require 'connect.php';
-				echo "<div class='wrapper style3'>";
-				echo "<table class='container'>";
-				foreach ($conn->query("SELECT Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
-					echo "<tr>";
-					echo "<td>";
-					echo $row['Name'];
-					echo "</td>";
-					echo "<td>";
-					echo "<td>";
-					echo $row['username'];
-					echo "</td>";
-					echo "</tr>";
-				}
-				echo "</table>";
-				echo "</div>";
- 			?>
+
 
 
 			<!-- Footer -->

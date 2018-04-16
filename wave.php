@@ -20,7 +20,7 @@ container: '#waveform',
 waveColor: 'white',
 progressColor: 'black'
 });
-wavesurfer.load('africa-toto.wav');
+wavesurfer.load('Users/martino/Roland-JV-2080-Bass-Pizz-C2.wav');
 //https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3
 // attivare o disattivare per avere il tempo
 /*wavesurfer.on('ready', function () {
