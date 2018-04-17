@@ -17,7 +17,7 @@
 
 						<!-- Logo -->
 							<div id="logo">
-								<h1><a href="index.html">ABOUT</a></h1>
+								<h1>ABOUT</h1>
 								<p>Com'è nato il sito?</p>
 							</div>
 

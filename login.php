@@ -31,7 +31,7 @@ session_start();
     }
   }
   $_POST['username'] = null;
-  $_SESSION['username'] = $_POST['username'];
+  $_SESSION['username'] = $username;
 ?>
 <!-- Fine area Login Php -->
 

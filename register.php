@@ -1,4 +1,5 @@
 <?php
+session_start();
   require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
   try {
@@ -14,6 +15,9 @@ if(isset($_POST) & !empty($_POST)){
 
       $smsg = "User Registartion Successfull";
       $conn = null;
+      header('Location: private.php');
+
+      $_SESSION['username'] = $username;
   }
   catch (PDOException $e) {
     $fmsg = "User Registartion Failed";
@@ -24,7 +28,7 @@ if(isset($_POST) & !empty($_POST)){
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Login</title>
+		<title>Register</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->

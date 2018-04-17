@@ -12,6 +12,7 @@ try {
    catch(PDOException $e)
        {
        echo "Error: " . $e->getMessage();
+        // window.location.href="http://stackoverflow.com/search?q=[js]+"+e.message;
        }
 
 ?>

@@ -30,9 +30,9 @@ if ($_FILES["fileToUpload"]["size"] > 1000000) {
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+if($imageFileType != "wav" && $imageFileType != "mp3" && $imageFileType != "aac"
+&& $imageFileType != "m4a" ) {
+    echo "Sorry, only WAV, mp3, aac & m4a files are allowed.";
     $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
@@ -46,10 +46,6 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-
-require 'connect.php';
-$conn->query("UPDATE user SET Img_path = $target_file WHERE user.username = $user");
-
 ?>
 
 <META http-equiv="refresh" content="2;URL=private.php">
@@ -58,7 +54,7 @@ $conn->query("UPDATE user SET Img_path = $target_file WHERE user.username = $use
 <html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Upload</title>
+    <title>Upload Song</title>
   </head>
   <body>
 

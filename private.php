@@ -39,7 +39,9 @@
 ?>
 
 
-
+<?php session_start();
+$user = $_SESSION['username'];
+echo $user; ?>
 
 
 
@@ -53,6 +55,14 @@
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
+
+<form action="upload_song.php" method="post" enctype="multipart/form-data">
+    Select song to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Song" name="submit">
+</form>
+
+<button type="button" name="button"><a href="index.php">Home</a></button>
 
 </body>
 </html>
