@@ -55,14 +55,17 @@ echo $user; ?>
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
-
+---------------------
 <form action="upload_song.php" method="post" enctype="multipart/form-data">
     Select song to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+    <input type="text" name="name" value="">nome della canzone <br>
+    <input type="text" name="descrizione" value="">descrizione della canzone
     <input type="submit" value="Upload Song" name="submit">
 </form>
 
 <button type="button" name="button"><a href="index.php">Home</a></button>
+<button type="button" name="button"><a href="logout.php">logout</a> </button>
 
 </body>
 </html>

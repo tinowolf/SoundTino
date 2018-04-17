@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_ACTIVE) {
+  header('location: private.php');
+}
+
 session_start();
   require_once('connect.php');
   if(isset($_POST) & !empty($_POST)){
@@ -46,7 +50,7 @@ session_start();
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body class="no-sidebar">
-    
+
     <!--  script per lo scorrimento automatico della pagina  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -126,7 +130,7 @@ session_start();
 											<header>
 												<h2>Terzultimo User</h2>
 											</header>
-											<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+											<a href="#" class="image featured"><img src="Users/martino/avatar.jpg" alt="" /></a>
 											<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
 											eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
 											tempus.</p>

@@ -36,6 +36,19 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file. ";
     }
 }
+
+include 'connect.php';
+// $n = mysqli_real_escape_string($conn, $_REQUEST['name']);
+// $d = mysqli_real_escape_string($conn, $_REQUEST['descrizione']);
+// $t = mysqli_real_escape_string($conn, $target_file);
+
+//   $stmt->bindParam(':target', $target_file);
+   $stmt->bindParam(':n', $_REQUEST['name']);
+   $stmt->bindParam(':d', $_REQUEST['descrizione']);
+
+$conn->query("INSERT INTO Songs (ID, ID_U, 'Path', Name, Description) VALUES (NULL, `50`, $target_file, :n, :d)");
+$stmt->execute();
+
 ?>
 
 <META http-equiv="refresh" content="3;URL=private.php">

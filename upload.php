@@ -48,7 +48,7 @@ if ($uploadOk == 0) {
 }
 
 require 'connect.php';
-foreach ($conn->query("SELECT `id` FROM `user` WHERE username = '50'")as $row) {
+foreach ($conn->query("SELECT `id` FROM `user` WHERE `user`.`username` = $user")as $row) {
   foreach ($conn->query("UPDATE `user` SET `Img_path` = $target_file WHERE `user`.`id` = ".$row['id'])as $riw) {
     echo "path aggiornato";
     }
