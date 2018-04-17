@@ -46,14 +46,19 @@ session_start();
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body class="no-sidebar">
+    
+    <!--  script per lo scorrimento automatico della pagina  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function () {
-  // Handler for .ready() called.
-  $('html, body').animate({
+    // Handler for .ready() called.
+    $('html, body').animate({
       scrollTop: $('#main').offset().top
-  }, 'slow');
-});
+    }, 1000);
+    });
     </script>
+    <!--  script per lo scorrimento automatico della pagina  -->
+
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -72,17 +77,6 @@ session_start();
 					</div>
 				</div>
 
-        <!--  script per lo scorrimento automatico della pagina  -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function () {
-      // Handler for .ready() called.
-      $('html, body').animate({
-          scrollTop: $('#main').offset().top
-      }, 1000);
-    });
-        </script>
-<!--  script per lo scorrimento automatico della pagina  -->
 
 			<!-- Main -->
 				<div class="wrapper style2">

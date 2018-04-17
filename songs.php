@@ -64,9 +64,10 @@
 
 						<?php
 						require 'connect.php';
-						echo "<div class='wrapper style3'> <table class='container'>";
+						echo "<div class='wrapper style3' id='song'> <table class='container'>";
 						foreach ($conn->query("SELECT Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
-							echo "<tr><td style='padding: 10px'>";
+							$z=$row['Name'];
+							echo "<tr><td style='padding: 10px' id=".$z.">";   // perchè prende solo il primo valore dopo lo spazio?
 							echo $row['Name'];
 							echo "</td>	<td style='padding: 10px'>";
 							echo $row['username'];
