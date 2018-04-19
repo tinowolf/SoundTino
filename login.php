@@ -1,7 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_ACTIVE) {
   header('location: private.php');
-}
+}else {
 
 session_start();
   require_once('connect.php');
@@ -36,6 +36,7 @@ session_start();
   }
   $_POST['username'] = null;
   $_SESSION['username'] = $username;
+}
 ?>
 <!-- Fine area Login Php -->
 

@@ -50,7 +50,8 @@ if ($uploadOk == 0) {
 require 'connect.php';
  $sql = $conn->prepare("SELECT `id` FROM `user` WHERE `user`.`username` = :u");
  $sql->bindParam(':u', $user);
- $iduser = $sql->fetchAll(PDO::FETCH_COLUMN, 0);
+ $iduser = $sql->fetch(PDO::FETCH_ASSOC);
+ echo $iduser." = iduser";
  $sql->execute();
 
        $stmt = $conn->prepare("UPDATE `user` SET `Img_path` = :tar WHERE `user`.`id` = :idu");

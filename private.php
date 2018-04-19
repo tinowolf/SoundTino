@@ -39,10 +39,18 @@
 ?>
 
 
-<?php session_start();
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+session_start();
 $user = $_SESSION['username'];
 echo "user in sessione: <b>".$user."</b><br />";
-echo "id sessione:<b> ".session_id()."</b><br /><br />"; ?>
+echo "id sessione:<b> ".session_id()."</b><br /><br />";
+}
+else {
+  alert('Devi prima fare il login!');
+  header("location: login.php");
+}
+?>
 
 
 <!DOCTYPE html>
