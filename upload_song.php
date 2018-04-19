@@ -32,22 +32,18 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. ";
+
+        include 'connect.php';
+           $stmt = $conn->prepare("INSERT INTO Songs (ID, ID_U, Path, Name, Description) VALUES (NULL, 50, :tar, :n, :d)");
+           $stmt->bindParam(':tar', $target_file);
+           $stmt->bindParam(':n', $_POST['name']);
+           $stmt->bindParam(':d', $_POST['descrizione']);
+
+        $stmt->execute();
     } else {
         echo "Sorry, there was an error uploading your file. ";
     }
 }
-
-include 'connect.php';
-// $n = mysqli_real_escape_string($conn, $_REQUEST['name']);
-// $d = mysqli_real_escape_string($conn, $_REQUEST['descrizione']);
-// $t = mysqli_real_escape_string($conn, $target_file);
-
-//   $stmt->bindParam(':target', $target_file);
-   $stmt->bindParam(':n', $_REQUEST['name']);
-   $stmt->bindParam(':d', $_REQUEST['descrizione']);
-
-$conn->query("INSERT INTO Songs (ID, ID_U, 'Path', Name, Description) VALUES (NULL, `50`, $target_file, :n, :d)");
-$stmt->execute();
 
 ?>
 

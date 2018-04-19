@@ -48,11 +48,17 @@ if ($uploadOk == 0) {
 }
 
 require 'connect.php';
-foreach ($conn->query("SELECT `id` FROM `user` WHERE `user`.`username` = $user")as $row) {
-  foreach ($conn->query("UPDATE `user` SET `Img_path` = $target_file WHERE `user`.`id` = ".$row['id'])as $riw) {
-    echo "path aggiornato";
-    }
-}
+ $sql = $conn->prepare("SELECT `id` FROM `user` WHERE `user`.`username` = :u");
+ $sql->bindParam(':u', $user);
+ $iduser = $sql->fetchAll(PDO::FETCH_COLUMN, 0);
+ $sql->execute();
+
+       $stmt = $conn->prepare("UPDATE `user` SET `Img_path` = :tar WHERE `user`.`id` = :idu");
+       $stmt->bindParam(':tar', $target_file);
+       $stmt->bindParam(':idu', $iduser);
+       $stmt->execute();
+
+
 ?>
 
 <META http-equiv="refresh" content="2;URL=private.php">

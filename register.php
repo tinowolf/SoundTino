@@ -3,10 +3,12 @@ session_start();
   require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
   try {
-      $sql = $conn->prepare('INSERT INTO user (username, email, password) VALUES (:username, :email, :password)');
+      $p = 'User/default-avatar.png';
+      $sql = $conn->prepare("INSERT INTO user (username, email, password, description, Img_path) VALUES (:username, :email, :password, '' ,:p)");
       $sql->bindParam(':username', $username);
       $sql->bindParam(':email', $email);
       $sql->bindParam(':password', $password);
+      $sql->bindParam(':p',$p);
 
       $username = $_POST['username'];
       $email = $_POST['email'];

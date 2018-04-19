@@ -41,9 +41,8 @@
 
 <?php session_start();
 $user = $_SESSION['username'];
-echo $user; ?>
-
-
+echo "user in sessione: <b>".$user."</b><br />";
+echo "id sessione:<b> ".session_id()."</b><br /><br />"; ?>
 
 
 <!DOCTYPE html>
@@ -63,7 +62,7 @@ echo $user; ?>
     <input type="text" name="descrizione" value="">descrizione della canzone
     <input type="submit" value="Upload Song" name="submit">
 </form>
-
+---------------------<br>
 <button type="button" name="button"><a href="index.php">Home</a></button>
 <button type="button" name="button"><a href="logout.php">logout</a> </button>
 
