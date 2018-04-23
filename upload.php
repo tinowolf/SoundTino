@@ -25,7 +25,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 1000000) {
+if ($_FILES["fileToUpload"]["size"] > 5000000) {   //5 Mb max upload
     echo "Sorry, your file is too large. ";
     $uploadOk = 0;
 }
@@ -48,15 +48,10 @@ if ($uploadOk == 0) {
 }
 
 require 'connect.php';
- $sql = $conn->prepare("SELECT `id` FROM `user` WHERE `user`.`username` = :u");
- $sql->bindParam(':u', $user);
- $iduser = $sql->fetch(PDO::FETCH_ASSOC);
- echo $iduser." = iduser";
- $sql->execute();
 
-       $stmt = $conn->prepare("UPDATE `user` SET `Img_path` = :tar WHERE `user`.`id` = :idu");
+       $stmt = $conn->prepare("UPDATE `user` SET `Img_path` = :tar WHERE `user`.`id` = (SELECT `id` WHERE `user`.`username` = :u)");
        $stmt->bindParam(':tar', $target_file);
-       $stmt->bindParam(':idu', $iduser);
+       $stmt->bindParam(':u', $user);
        $stmt->execute();
 
 

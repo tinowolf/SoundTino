@@ -33,9 +33,8 @@
 				<div id="intro-wrapper" class="wrapper style1">
 					<div class="title">Last Song</div>
 					<section id="intro" class="container">
-						<p class="style1">Uploaded by: <a href="search.php">Martino Favalli</a> </p>
-						<!-- <p class="style3" style="text-align:left">by: <a href="https://facebook.com">Martino Favalli</a></p> -->
-							<?php include 'wave.php'; ?>
+						<p class="style1">Uploaded by: <a href="search.php"><?php require 'connect.php'; foreach($stmt = $conn->query("SELECT username FROM user LEFT JOIN Songs ON Songs.ID_U = user.id ORDER BY Songs.ID DESC LIMIT 1") as $a){  echo $a['username'];}?></a> </p>
+							<?php include 'wave3.php'; ?>
 
 						<p class="style3">It's <strong>responsive</strong>, built on <strong>HTML5</strong> and <strong>CSS3</strong>, and released for
 						free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>, so use it for any of

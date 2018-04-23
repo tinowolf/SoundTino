@@ -15,7 +15,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 10000000) {
+if ($_FILES["fileToUpload"]["size"] > 10000000) {  //10 Mb max upload
     echo "Sorry, your file is too large. ";
     $uploadOk = 0;
 }
@@ -34,9 +34,10 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded. ";
 
         include 'connect.php';
-           $stmt = $conn->prepare("INSERT INTO Songs (ID, ID_U, Path, Name, Description) VALUES (NULL, 50, :tar, :n, :d)");
+           $stmt = $conn->prepare("INSERT INTO Songs (ID, ID_U, Path, Name, Description) VALUES (NULL, (SELECT `id` FROM user WHERE `user`.`username` = :u), :tar, :n, :d)");
            $stmt->bindParam(':tar', $target_file);
            $stmt->bindParam(':n', $_POST['name']);
+           $stmt->bindParam(':u', $user);
            $stmt->bindParam(':d', $_POST['descrizione']);
 
         $stmt->execute();
