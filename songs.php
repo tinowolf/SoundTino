@@ -9,24 +9,6 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 
-	<script>
-	function showHint(str) {
-	    if (str.length == 0) {
-	        document.getElementById("txtHint").innerHTML = "";
-	        return;
-	    } else {
-	        var xmlhttp = new XMLHttpRequest();
-	        xmlhttp.onreadystatechange = function() {
-	            if (this.readyState == 4 && this.status == 200) {
-	                document.getElementById("txtHint").innerHTML = this.responseText;
-	            }
-	        };
-	        xmlhttp.open("GET", "getHint.php?q=" + str, true);
-	        xmlhttp.send();
-	    }
-	}
-	</script>
-
 	<body class="no-sidebar">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -67,7 +49,7 @@
 						echo "<div class='wrapper style3' id='song'> <table class='container'>";
 						foreach ($conn->query("SELECT Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
 							$z=$row['Name'];
-							echo "<tr><td style='padding: 10px' id=".$z.">";   // perchè prende solo il primo valore dopo lo spazio?
+							echo "<tr><td style='padding: 10px' id='".$z."'>";   // perchè prende solo il primo valore dopo lo spazio?
 							echo $row['Name'];
 							echo "</td>	<td style='padding: 10px'>";
 							echo $row['username'];

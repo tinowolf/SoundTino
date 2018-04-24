@@ -34,7 +34,7 @@
 					<div class="title">Last Song</div>
 					<section id="intro" class="container">
 						<p class="style1">Uploaded by: <a href="search.php"><?php require 'connect.php'; foreach($stmt = $conn->query("SELECT username FROM user LEFT JOIN Songs ON Songs.ID_U = user.id ORDER BY Songs.ID DESC LIMIT 1") as $a){  echo $a['username'];}?></a> </p>
-							<?php include 'wave3.php'; ?>
+							<?php include 'wave.php'; ?>
 
 						<p class="style3">It's <strong>responsive</strong>, built on <strong>HTML5</strong> and <strong>CSS3</strong>, and released for
 						free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>, so use it for any of
@@ -118,6 +118,12 @@
 					<div class="title">The Endorsements</div>
 					<div id="highlights" class="container">
 						<div class="row 150%">
+							<?php include 'connect.php';
+
+							?>
+
+
+
 							<div class="4u 12u(mobile)">
 								<section class="highlight">
 									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="img user" /></a>
@@ -144,7 +150,7 @@
 									<h3><a href="#">Mattis tempus lorem</a></h3>
 									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
 									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
+										<li><a href="right-sidebar.php" class="button style1">Learn More</a></li>
 									</ul>
 								</section>
 							</div>
