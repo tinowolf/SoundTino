@@ -50,7 +50,7 @@
 						foreach ($conn->query("SELECT Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
 							$z=$row['Name'];
 							echo "<tr><td style='padding: 10px' id='".$z."'>";   // perchè prende solo il primo valore dopo lo spazio?
-							echo $row['Name'];
+							echo "<a href='".$row['Name']."'>".$row['Name']."</a>";
 							echo "</td>	<td style='padding: 10px'>";
 							echo $row['username'];
 							echo "</td> </tr>";

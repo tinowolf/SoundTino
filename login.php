@@ -104,40 +104,16 @@ session_start();
 									</form>
 								</article>
 								<div class="row 150%">
-									<div class="4u 12u(mobile)">
-										<section class="box">
-											<header>
-												<h2>Ultimo User</h2>
-											</header>
-											<a href="#" class="image featured"><img src="Users/default-avatar.png" alt="" /></a>
-											<p>Qui ci va la foto e la descrizione dell'utente presa dal database</p>
-											<a href="#" class="button style1">More</a>
-										</section>
-									</div>
-									<div class="4u 12u(mobile)">
-										<section class="box">
-											<header>
-												<h2>Penultimo User</h2>
-											</header>
-											<a href="#" class="image featured"><img src="images/photo.png" alt="" /></a>
-											<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
-											eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
-											tempus.</p>
-											<a href="#" class="button style1">More</a>
-										</section>
-									</div>
-									<div class="4u 12u(mobile)">
-										<section class="box">
-											<header>
-												<h2>Terzultimo User</h2>
-											</header>
-											<a href="#" class="image featured"><img src="Users/martino/avatar.jpg" alt="" /></a>
-											<p>Rutrum bibendum. Proin pellentesque diam non ligula commodo tempor. Vivamus
-											eget urna nibh. Curabitur non fringilla nisl. Donec accumsan interdum nisi, quis
-											tempus.</p>
-											<a href="#" class="button style1">More</a>
-										</section>
-									</div>
+                  <?php
+                  include 'connect.php';
+                  foreach ($stmt = $conn->query("SELECT Img_path, username, description FROM user ORDER BY id DESC LIMIT 3")as $a) {
+                    echo "<div class='4u 12u(mobile)'> <section class='box'><header> <h2>".$a['username']."</h2></header>";
+                    echo "<a href='#' class='image featured'><img src='".$a['Img_path']."' alt='user image' /></a>";
+                    echo "<p>".$a['description']."</p>";
+                    echo "<a href='https://www.google.com/search?q=".$a['username']."' class='button style1'>More</a>";
+                    echo "</section> </div>";
+                  }
+                   ?>
 								</div>
 							</div>
 

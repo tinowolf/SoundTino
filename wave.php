@@ -22,7 +22,7 @@ progressColor: 'black'
 });
 <?php require 'connect.php';
 foreach ($stmt = $conn->query("SELECT Path FROM Songs ORDER BY ID DESC LIMIT 1")as $a) {$z = $a['Path'];}
-echo "wavesurfer.load('" . $z."');";?>
+echo "wavesurfer.load('". $z."');";?>
 //https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3
 // attivare o disattivare per avere il tempo
 /*wavesurfer.on('ready', function () {
