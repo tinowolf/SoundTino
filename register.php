@@ -20,6 +20,14 @@ if(isset($_POST) & !empty($_POST)){
       header('Location: private.php');
 
       $_SESSION['username'] = $username;
+
+      // $to = $email;
+      // $subject = "Benvenuto su SoundTino";
+      // $txt = "Grazie per esserti registrato, le tue credenziali sono: username -> $username password-> $password";
+      // $headers = "From: favalli.martino@gmail.com"; //. "\r\n" ."CC: somebodyelse@example.com";
+      //
+      // mail($to,$subject,$txt,$headers);
+
   }
   catch (PDOException $e) {
     $fmsg = "User Registartion Failed";

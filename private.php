@@ -38,5 +38,22 @@ else {
 <button type="button" name="button"><a href="index.php">Home</a></button>
 <button type="button" name="button"><a href="logout.php">logout</a> </button>
 
+
+<h1>My Songs</h1>
+<?php
+echo "<table border 1px black>";
+foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id WHERE user.username = '".$user."'") as $row){
+  $z=$row['Name'];
+  echo "<tr><td style='padding: 10px' id='".$z."'>";   // perchè prende solo il primo valore dopo lo spazio?
+  echo "<a href='song.php?id=".$row['ID']."'>".$row['Name']."</a>";
+  echo "</td>	<td style='padding: 10px'>";
+  echo $row['username'];
+  echo "</td> </tr>";
+}
+echo "</table>";
+
+ ?>
+
+
 </body>
 </html>
