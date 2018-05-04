@@ -2,6 +2,8 @@
 if (session_status() == PHP_SESSION_NONE) {
 session_start();
 $user = $_SESSION['username'];
+require 'connect.php';
+$stmt = $conn->query("SELECT id, username from user where ")
 echo "user in sessione: <b>".$user."</b><br />";
 echo "id sessione:<b> ".session_id()."</b><br /><br />";
 }

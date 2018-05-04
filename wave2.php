@@ -17,17 +17,17 @@
 <script type="text/javascript">
 var wavesurfer = WaveSurfer.create({
 container: '#waveform',
-waveColor: 'white',
+waveColor: 'blue',
 progressColor: 'black'
 });
 
 
 <?php require 'connect.php';
-$stmt = $conn->prepare("SELECT ID, Path FROM Songs WHERE ID = :id");
-$stmt->bindParam(':id', intval($_GET['id']));
-$stmt->execute();
-  $z = $stmt['Path'];
-  echo "wavesurfer.load('" . $z."');"
+ $stmt = $conn->prepare("SELECT Path FROM Songs WHERE ID = :id");
+ $stmt->bindParam(':id', $id);
+ $stmt->execute();
+ $z = $stmt['Path'];
+   echo "wavesurfer.load('" .$z."');";
   ?>
 
 </script>
