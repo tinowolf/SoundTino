@@ -20,9 +20,14 @@ container: '#waveform',
 waveColor: 'white',
 progressColor: 'black'
 });
+
+
 <?php require 'connect.php';
-foreach ($stmt = $conn->query("SELECT Path FROM Songs ORDER BY ID DESC LIMIT 1")as $a) {
-  $z = $a['Path'];
-  echo "wavesurfer.load('" . $z."');";}?>
+$stmt = $conn->prepare("SELECT ID, Path FROM Songs WHERE ID = :id");
+$stmt->bindParam(':id', intval($_GET['id']));
+$stmt->execute();
+  $z = $stmt['Path'];
+  echo "wavesurfer.load('" . $z."');"
+  ?>
 
 </script>
