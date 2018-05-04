@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
 session_start();
 $user = $_SESSION['username'];
 require 'connect.php';
-$stmt = $conn->query("SELECT id, username from user where ")
+// $stmt = $conn->query("SELECT id, username from user where ");
 echo "user in sessione: <b>".$user."</b><br />";
 echo "id sessione:<b> ".session_id()."</b><br /><br />";
 }
@@ -16,6 +16,9 @@ else {
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Private</title>
+  </head>
 <body>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">

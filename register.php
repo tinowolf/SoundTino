@@ -3,7 +3,7 @@ session_start();
   require_once('connect.php');
 if(isset($_POST) & !empty($_POST)){
   try {
-      $p = 'User/default-avatar.png';
+      $p = 'Users/default-avatar.png';
       $sql = $conn->prepare("INSERT INTO user (username, email, password, description, Img_path) VALUES (:username, :email, :password, '' ,:p)");
       $sql->bindParam(':username', $username);
       $sql->bindParam(':email', $email);
