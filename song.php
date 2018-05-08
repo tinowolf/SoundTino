@@ -47,7 +47,7 @@
 						<?php
 						require 'connect.php';
 						echo "<div class='wrapper style3' id='song'> <table class='container'>";
-            $id = intval($_GET['id']);
+            $id = $_GET['id'];
 						include 'wave2.php';
 						echo "</table> </div>";
             ?>

@@ -26,8 +26,8 @@ progressColor: 'black'
  $stmt = $conn->prepare("SELECT Path FROM Songs WHERE ID = :id");
  $stmt->bindParam(':id', $id);
  $stmt->execute();
- $z = $stmt['Path'];
-   echo "wavesurfer.load('" .$z."');";
+ $z = $stmt->fetch(PDO::FETCH_ASSOC);
+   echo "wavesurfer.load('" .$z['Path']."');";
   ?>
 
 </script>
