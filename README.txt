@@ -7,9 +7,6 @@ Credits:
 	PHP code:
 		Martino Favalli (github.com/tinowolf)
 
-	Demo Images:
-		Felicia Simion (ineedchemicalx.deviantart.com)
-
 	Icons:
 		Font Awesome (fortawesome.github.com/Font-Awesome)
 
