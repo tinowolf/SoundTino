@@ -41,13 +41,20 @@
 
 			<!-- Main -->
 				<div id="main" class="wrapper style2">
-					<div class="title">Songs</div>
+					<?php require 'connect.php';
+					$id = $_GET['id'];
+					$sql = $conn->prepare("SELECT Name FROM Songs WHERE ID = :id");
+					$sql->bindParam(':id', $id);
+				  $sql->execute();
+				  $z = $sql->fetch(PDO::FETCH_ASSOC);
+				    echo "<div class='title'>".$z['Name']."</div>";
+						?>
+				 <!-- <div class="title">Song</div> titolo della canzone -->
 					<div class="container">
 
 						<?php
 						require 'connect.php';
 						echo "<div class='wrapper style3' id='song'> <table class='container'>";
-            $id = $_GET['id'];
 						include 'wave2.php';
 						echo "</table> </div>";
             ?>
