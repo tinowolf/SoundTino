@@ -18,7 +18,7 @@
 var wavesurfer = WaveSurfer.create({
 container: '#waveform',
 waveColor: 'white',
-progressColor: 'black'
+progressColor: '#27303d'
 });
 <?php require 'connect.php';
 foreach ($stmt = $conn->query("SELECT Path FROM Songs ORDER BY ID DESC LIMIT 1")as $a) {$z = $a['Path'];}

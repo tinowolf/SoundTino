@@ -67,7 +67,7 @@
 								<article class="box post">
 									<header class="style1">
 										<h2>Cerca<br class="mobile-hide" /></h2>
-										<p>Cerca la canzone o l'autore</p>
+										<p>Cerca la canzone</p>
 									</header>
 
 									<form class="container" method="GET">

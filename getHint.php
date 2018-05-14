@@ -1,9 +1,9 @@
 <?php
 // Array with names
 require 'connect.php';
-foreach ($conn->query("SELECT username FROM user UNION SELECT Name FROM Songs") as $row)
+foreach ($conn->query("SELECT Name FROM Songs") as $row)
 {
-  $a[]=$row['username'];
+  $a[]=$row['Name'];
 }
 // get the q parameter from URL
 $q = $_REQUEST["q"];

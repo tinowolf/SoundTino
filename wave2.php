@@ -24,7 +24,7 @@
 <script type="text/javascript">
 var wavesurfer = WaveSurfer.create({
 container: '#waveform',
-waveColor: ' #ffa64d',
+waveColor: '#ffa64d',
 progressColor: 'hsla(200, 100%, 30%, 1.0)'
 });
 
