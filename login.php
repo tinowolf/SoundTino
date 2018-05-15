@@ -3,7 +3,6 @@ if (session_status() == PHP_SESSION_ACTIVE) {
   header('location: private.php');
 }else {
 
-session_start();
   require_once('connect.php');
   if(isset($_POST) & !empty($_POST)){
     try {
@@ -17,6 +16,7 @@ session_start();
 
       if(count($result)>0){
        if(password_verify($password ,$result[0]["password"])==true){
+            session_start();
             $smsg = "Login in corso";
             sleep(1);
             header('location: private.php');
@@ -108,7 +108,7 @@ session_start();
                   include 'connect.php';
                   foreach ($stmt = $conn->query("SELECT Img_path, username, description FROM user ORDER BY id DESC LIMIT 3")as $a) {
                     echo "<div class='4u 12u(mobile)'> <section class='box'><header> <h2>".$a['username']."</h2></header>";
-                    echo "<a href='#' class='image featured'><img src='".$a['Img_path']."' alt='user image' /></a>";
+                    echo "<a href=allSongs.php?u=".$a['username']." class='image featured'><img src='".$a['Img_path']."' alt='user image' /></a>";
                     echo "<p>".$a['description']."</p>";
                     echo "<a href='https://www.google.com/search?q=".$a['username']."' class='button style1'>More</a>";
                     echo "</section> </div>";

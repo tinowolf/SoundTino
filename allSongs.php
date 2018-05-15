@@ -41,25 +41,21 @@
 
 			<!-- Main -->
 				<div id="main" class="wrapper style2">
-					<div class="title">Songs</div>
-					<div class="container">
-
-						<?php
-						require 'connect.php';
-						echo "<div class='wrapper style3' id='song'> <table class='container'>";
-						foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id") as $row){
-							$z=$row['Name'];
-							echo "<tr><td style='padding: 10px' id='".$z."'>";   // perchè prende solo il primo valore dopo lo spazio?
-							echo "<a href='song.php?id=".$row['ID']."'>".$row['Name']."</a>";
-							echo "</td>	<td style='padding: 10px'>";
-							echo "<a href='allSongs.php?u=".$row['username']."'>".$row['username']."</a>";
-							echo "</td> </tr>";
-						}
-						echo "</table> </div>";
-		 			?>
+            <?php
+            require 'connect.php';
+            $u = $_GET['u'];
+            echo "<div class='wrapper style3' id='song'> <table style=text-align:center class='container'>";
+            foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user LEFT JOIN Songs ON Songs.ID_U = user.id WHERE user.username = '$u'") as $row){
+              echo "<tr><td style='padding: 10px' id='".$row['Name']."'>";
+              echo "<a href='song.php?id=".$row['ID']."'>".$row['Name']."</a>";
+              echo "</td> </tr>";
+            }
+            echo "</table> </div>";
+          ?>
 
 					</div>
 				</div>
+
 
 
 			<!-- Footer -->

@@ -8,6 +8,8 @@
 
 <p>
 <div style="text-align: center">
+<p><?php  $st = $conn->query("SELECT username FROM user LEFT JOIN Songs on Songs.ID_U= user.id WHERE Songs.ID = '$id'");  $z = $st->fetch(PDO::FETCH_ASSOC); echo "Uploaded by <a href='allSongs.php?u=".$z['username']."'>".$z['username']."</a>"; ?></p>
+
   <button class="btn btn-primary" onclick="wavesurfer.playPause()">
     <i class="glyphicon glyphicon-play"></i>
     Play

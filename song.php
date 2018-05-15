@@ -52,16 +52,19 @@
 				 <!-- <div class="title">Song</div> titolo della canzone -->
 					<div class="container">
 
-						<?php
+						<?php session_start();
 						require 'connect.php';
 						echo "<div class='wrapper style3' id='song'> <table class='container'>";
 						include 'wave2.php';
-						echo "</table> </div>";
+						echo "</table> ";
+						$sqll = $conn->query("SELECT Description FROM Songs WHERE ID = '$id'");
+						$x = $sqll->fetch(PDO::FETCH_ASSOC);
+						echo "<p style = text-align:center>".$x['Description']."</p>";
+						echo "</div>";
             ?>
 
 					</div>
 				</div>
-
 
 
 
