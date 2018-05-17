@@ -20,7 +20,7 @@ else {
 <body>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
+    Select user-image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
@@ -38,6 +38,13 @@ else {
 
 
 <h1>My Songs</h1>
+<script>
+function myFunction(el) {
+    var myWindow = window.open("description.php?id='"+el.value+"'", "Description", "width=500,height=300");
+}
+</script>
+
+
 <?php
 echo "<table border 1px black>";
 foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user RIGHT JOIN Songs ON Songs.ID_U = user.id WHERE user.username = '".$user."'") as $row){
@@ -46,6 +53,8 @@ foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user RIGH
   echo "<a href='song.php?id=".$row['ID']."'>".$row['Name']."</a>";
   echo "</td>	<td style='padding: 10px'>";
   echo $row['username'];
+  echo "</td>	<td style='padding: 10px'>";
+  echo "<button onclick=myFunction(this) value=".$row['ID']." >Modifica Descrizione</button>";
   echo "</td> </tr>";
 }
 echo "</table>";
