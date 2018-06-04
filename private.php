@@ -52,7 +52,7 @@ foreach ($conn->query("SELECT Songs.ID, Songs.Name, user.username FROM user RIGH
   echo "<tr><td style='padding: 10px' id='".$z."'>";   // perchè prende solo il primo valore dopo lo spazio?
   echo "<a href='song.php?id=".$row['ID']."'>".$row['Name']."</a>";
   echo "</td>	<td style='padding: 10px'>";
-  echo $row['username'];
+  echo "<button value=".$row['ID']." onclick=delete(this)>DELETE</button>";
   echo "</td>	<td style='padding: 10px'>";
   echo "<button onclick=myFunction(this) value=".$row['ID']." >Modifica Descrizione</button>";
   echo "</td> </tr>";
