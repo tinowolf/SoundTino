@@ -1,10 +1,10 @@
 <?php
 include "config.php";
 
-$id = $_POST['ID'];
+$id = $_POST['id'];
 
 // Delete record
-$query = "DELETE FROM Songs WHERE ID=".$id;
+$query = "DELETE FROM Songs WHERE id=".$id;
 mysqli_query($con,$query);
 
 echo 1;
