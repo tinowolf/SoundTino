@@ -34,7 +34,7 @@
 					<div class="title">Last Song</div>
 					<section id="intro" class="container">
 							<?php require 'connect.php';
-							echo "<p class='style1'>Uploaded by: <a href='search.php'>";
+							echo "<p class='style1'>Uploaded by: <a href='songs.php'>";
 							foreach($stmt = $conn->query("SELECT username FROM user LEFT JOIN Songs ON Songs.ID_U = user.id ORDER BY Songs.ID DESC LIMIT 1") as $a){
 								  echo $a['username'];
 								}
