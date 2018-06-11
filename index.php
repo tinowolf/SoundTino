@@ -64,20 +64,20 @@
 							<section id="features">
 								<header class="style1">
 									<h2>Perchè registrarsi?</h2>
-									<p>motivare il cliente</p>
+									<!-- <p>motivare il cliente</p> -->
 								</header>
 								<div class="feature-list">
 									<div class="row">
 										<div class="6u 12u(mobile)">
 											<section>
 												<h3 class="icon fa-comment">Discussioni tra musicisti</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+												<p>Prossimamente verrà implementata un interfaccia che permetterà ai musicisti di commentare le canzoni!.</p>
 											</section>
 										</div>
 										<div class="6u 12u(mobile)">
 											<section>
 												<h3 class="icon fa-refresh">Condividere idee</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+												<p>Ascolta le canzoni di altri utenti e prendi spunto per le tue idee musicali.</p>
 											</section>
 										</div>
 									</div>
@@ -85,7 +85,7 @@
 										<div class="6u 12u(mobile)">
 											<section>
 												<h3 class="icon fa-music">Nuove idee musicali</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+												<p>Chissà che ascoltando qualche canzone non ti venga l'ispirazione per un nuovo pezzo :P</p>
 											</section>
 										</div>
 										<div class="6u 12u(mobile)">
@@ -107,7 +107,7 @@
 
 			<!-- Highlights -->
 				<div class="wrapper style3">
-					<div class="title">Some Users</div>
+					<div class="title">Alcuni Utenti</div>
 					<div id="highlights" class="container">
 						<div class="row 150%">
 							<?php
