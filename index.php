@@ -95,24 +95,10 @@
 											</section>
 										</div>
 									</div>
-									<div class="row">
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-wrench">Aliquam consequat et feugiat</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-										<div class="6u 12u(mobile)">
-											<section>
-												<h3 class="icon fa-check">Dolore laoreet aliquam mattis</h3>
-												<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-											</section>
-										</div>
-									</div>
 								</div>
 								<ul class="actions actions-centered">
-									<li><a href="register.php" class="button style1 big">Get Started</a></li>
-									<li><a href="right-sidebar.php" class="button style2 big">More Info</a></li>
+									<li><a href="register.php" class="button style1 big">Inizia</a></li>
+									<li><a href="right-sidebar.php" class="button style2 big">Info</a></li>
 								</ul>
 							</section>
 
@@ -131,7 +117,7 @@
 								echo "<a href=allSongs.php?u=".$a['username']." class='image featured'><img src='".$a['Img_path']."' alt='user image' /></a>";
 								echo "<h3><a href=allSongs.php?u=".$a['username'].">".$a['username']."</a></h3>";
 								echo "<p>".$a['description']."</p>";
-								echo "<ul class='actions'><li><a href=allSongs.php?u=".$a['username']." class='button style1'>Learn More</a></li></ul>";
+								echo "<ul class='actions'><li><a href=allSongs.php?u=".$a['username']." class='button style1'>Scopri Utente</a></li></ul>";
 								echo "</section> </div>";
 							}
 							 ?>
