@@ -9,8 +9,8 @@
       include 'connect.php';
       foreach ($stmt = $conn->query("SELECT Img_path, username, description FROM user ORDER BY id ASC LIMIT 3")as $a) {
         echo "<li> <article class='box post-excerpt'>";
-        echo "<a href='#' class='image left'><img src='".$a['Img_path']."' alt='' /></a>";
-        echo "<h3><a href='#'>".$a['username']."</a></h3>";
+        echo "<a href='allSongs.php?u=".$a['username']."' class='image left'><img src='".$a['Img_path']."' alt='' /></a>";
+        echo "<h3><a href='allSongs.php?u=".$a['username']."'>".$a['username']."</a></h3>";
         echo "<p>".$a['description']."</p>";
         echo "</article></li>";
       }
